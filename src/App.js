@@ -1,19 +1,28 @@
 import { Switch, Route, Router } from 'react-router-dom';
 import browserHistory from './browserHistory';
-import {GamingRoutes} from './routing';
-import {AppDashboardPage} from './pages';
+import { GamingRoutes } from './routing';
+import { AppDashboardPage } from './pages';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+  }
+});
 
 function App() {
   return (
-    <Router history={browserHistory}>
-      <Switch>
-        {GamingRoutes},
-        <Route exact path="/" component={AppDashboardPage} />,
-        <Route path="*">
+    <MuiThemeProvider theme={theme}>
+      <Router history={browserHistory}>
+        <Switch>
+          {GamingRoutes},
+          <Route exact path="/" key="/" component={AppDashboardPage} />,
+          <Route path="*" key="*">
             <NoMatch />
-        </Route>
-      </Switch>
-    </Router>
+          </Route>
+        </Switch>
+      </Router>
+    </MuiThemeProvider>
   );
 }
 

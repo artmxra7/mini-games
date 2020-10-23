@@ -17,7 +17,7 @@ function GamesCollection(){
 }
 
 export default [    
-    <Route path="/match-the-pair" keys="match-the-pair" component={MatchThePair} />,
+    <Route path="/match-the-pair" key="match-the-pair" component={MatchThePair} />,
     <Route path="/spin" key="spin" component={Spin} />,
     <Route path="/jackpot" key="jackpot" component={Jackpot} />
 ]

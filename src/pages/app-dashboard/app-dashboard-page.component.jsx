@@ -1,7 +1,18 @@
 import React from 'react'
+import { GamesNavBar } from 'components';
+import { Grid, Typography, Paper } from '@material-ui/core';
 
-const AppDashboard = () => {
-    return <h1>Hi I am page</h1>
+const AppDashboardPageComponent = () => {
+    return (
+        <Grid container>
+            <GamesNavBar />
+            <Grid container justify="center" align="center">
+                <Paper>
+                    <Typography>In progress</Typography>
+                </Paper>
+            </Grid>
+        </Grid>
+    )
 }
 
-export default AppDashboard;
+export default AppDashboardPageComponent;

@@ -1,7 +1,7 @@
-import AppDashboard from './app-dashboard-page.component';
+import AppDashboardPageComponent from './app-dashboard-page.component';
 
 const AppDashboardPage = () => {
-    return <AppDashboard />;
+    return <AppDashboardPageComponent />;
 }
 
 export default AppDashboardPage;
