@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, Router } from 'react-router-dom';
+import browserHistory from './browserHistory';
+import {GamingRoutes} from './routing';
+import {AppDashboardPage} from './pages';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={browserHistory}>
+      <Switch>
+        {GamingRoutes},
+        <Route exact path="/" component={AppDashboardPage} />,
+        <Route path="*">
+            <NoMatch />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
+
+const NoMatch = () => {
+  return <h1>No match</h1>
+}
+
 
 export default App;
