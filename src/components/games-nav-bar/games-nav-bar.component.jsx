@@ -11,6 +11,7 @@ import spinPrizeWheelLogo from '../../assets/game-thumbnails/spin-prize-wheel.gi
 import jackpot777Logo from '../../assets/game-thumbnails/jackpot777.jpg';
 import miniGamesLogo from '../../assets/game-thumbnails/minigames-logo.png';
 import matchThePairLogo from '../../assets/game-thumbnails/match-the-pair.gif';
+import flipACoin from '../../assets/game-thumbnails/flip-a-coin.png'
 import { CardMedia, Typography } from '@material-ui/core';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import browserHistory from 'browserHistory';
@@ -96,6 +97,12 @@ const GamesNavBarComponent = () => {
                         <Avatar alt="Match the pair" src={matchThePairLogo} />
                     </ListItemAvatar>
                     <ListItemText primary="Match the pair" secondary="Let's do match-making" />
+                </ListItem>
+                <ListItem onClick={() => browserHistory.push('/flip-a-coin')}>
+                    <ListItemAvatar>
+                        <Avatar alt="Flip a coin" src={flipACoin} />
+                    </ListItemAvatar>
+                    <ListItemText primary="Flip a coin" secondary="Try your luck" />
                 </ListItem>
             </List>
         </Drawer >
