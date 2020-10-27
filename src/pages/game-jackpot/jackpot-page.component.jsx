@@ -1,18 +1,19 @@
 import React from 'react'
-import { GamesNavBar, SpinWheel } from 'components';
+import { GamesNavBar, Jackpot } from 'components';
 import { Grid, Paper } from '@material-ui/core';
 
-const SpinPageComponent = () => {
+
+const JackpotPageComponent = () => {
     return (
         <Grid container>
             <GamesNavBar />
             <Grid container justify="center" align="center">
                 <Paper>
-                    <SpinWheel />
+                    <Jackpot />
                 </Paper>
             </Grid>
         </Grid>
     )
 }
 
-export default SpinPageComponent;
+export default JackpotPageComponent;
