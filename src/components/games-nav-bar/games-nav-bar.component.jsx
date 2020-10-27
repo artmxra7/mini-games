@@ -61,7 +61,9 @@ const GamesNavBarComponent = () => {
             }}
             anchor="left"
         >
-            <CardActionArea>
+            <CardActionArea
+                onClick={() => browserHistory.push('/')}
+            >
                 <CardMedia
                     component="img"
                     alt="MiniGames logo"
