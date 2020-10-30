@@ -1,13 +1,13 @@
-import { Switch, Route, Router } from 'react-router-dom';
-import browserHistory from './browserHistory';
-import { GamingRoutes } from './routing';
-import { AppDashboardPage } from './pages';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { Switch, Route, Router } from "react-router-dom";
+import browserHistory from "./browserHistory";
+import { GamingRoutes } from "./routing";
+import { AppDashboardPage } from "./pages";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
-  }
+    type: "dark",
+  },
 });
 
 function App() {
@@ -27,8 +27,7 @@ function App() {
 }
 
 const NoMatch = () => {
-  return <h1>No match</h1>
-}
-
+  return <h1>No match</h1>;
+};
 
 export default App;
