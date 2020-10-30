@@ -7,8 +7,10 @@ const MatchTheCardPair = () => {
   const [gameData, setGameData] = useState({
     cards: [],
     gameNotYetInitialized: true,
+    time: "00:00",
+    moves: 0,
   });
-
+  const [openRefreshGameModal, setOpenRefreshGameModal] = useState(false);
   const startTheGame = () => {
     let savedGameData =
       localStorage.getItem("GameData-matchTheCardPair") || "{}";
@@ -17,7 +19,6 @@ const MatchTheCardPair = () => {
 
     if (_.isEmpty(savedGameData) || savedGameData.gameNotYetInitialized) {
       setGameData(generateGameDataForStage(1));
-      saveTheGameData();
     } else {
       setGameData(savedGameData);
     }
@@ -33,6 +34,11 @@ const MatchTheCardPair = () => {
     saveTheGameData();
   }, [gameData]);
 
+  const handleGameRest = () => {
+    console.log("I am handleGameRest");
+    localStorage.removeItem("GameData-matchTheCardPair");
+    window.location.reload(false);
+  };
   const saveTheGameData = () => {
     localStorage.setItem("GameData-matchTheCardPair", JSON.stringify(gameData));
   };
@@ -44,6 +50,7 @@ const MatchTheCardPair = () => {
   const flipThisCard = (cardId) => {
     let card = _.find(gameData.cards, { id: cardId });
     card.face = card.face === "BACK" ? "FRONT" : "BACK";
+    gameData.moves += 1;
     setGameData({ ...gameData });
   };
 
@@ -53,6 +60,9 @@ const MatchTheCardPair = () => {
       gameData={gameData}
       goToNextStage={goToNextStage}
       flipThisCard={flipThisCard}
+      openRefreshGameModal={openRefreshGameModal}
+      setOpenRefreshGameModal={setOpenRefreshGameModal}
+      handleGameRest={handleGameRest}
     />
   );
 };
@@ -61,6 +71,8 @@ function generateGameDataForStage(stage) {
   let gameDataForStage = {
     stage: stage,
     cards: [],
+    time: "00:00",
+    moves: 0,
   };
 
   let secretValues = _.shuffle(
@@ -70,7 +82,7 @@ function generateGameDataForStage(stage) {
   gameDataForStage.cards = secretValues.map((secretValue) => {
     return {
       secretValue: secretValue,
-      face: "FRONT",
+      face: "BACK",
       id: nanoid(),
     };
   });

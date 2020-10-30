@@ -1,38 +1,47 @@
 import React from "react";
-import { Card, Grid, CardContent, Typography } from "@material-ui/core";
-import { ContactSupport } from "@material-ui/icons";
+import { Card, CardContent, Grid, Typography } from "@material-ui/core";
 
 function FlippingCardComponent(props) {
   let { secretValue, face, flipThisCard, id } = props;
   const styles = {
     frontFace: {
-      backgroundColor: "#0099ff",
-      height: "200px",
+      backgroundColor: "#00D0BA",
+      height: "6vw",
+      width: "6vw",
       transform: "rotateY(360deg)",
-      transition: "transform .2s ease",
+      transition: "transform .1s ease",
+      boxShadow: "0 0 7px 0 gray",
+      borderRadius: "10%",
     },
     backFace: {
-      backgroundColor: "#9922ff",
-      height: "200px",
+      backgroundColor: "#2e3d49",
+      height: "6vw",
+      width: "6vw",
       transform: "rotateY(-360deg)",
-      transition: "transform .2s ease",
-      alignItem: "center",
+      transition: "transform .1s ease",
+      boxShadow: "0 0 7px 0 gray",
+      borderRadius: "10%",
     },
   };
 
   return (
-    <Card
+    <Grid
       onClick={() => flipThisCard(id)}
       style={face === "FRONT" ? styles.frontFace : styles.backFace}
     >
-      <CardContent>
+      <Grid
+        style={{ height: "100%" }}
+        container
+        justify="center"
+        alignItems="center"
+      >
         {face === "FRONT" ? (
-          <Typography>{"FRONT" + secretValue}</Typography>
+          <Typography variant="h5">{secretValue}</Typography>
         ) : (
           <Typography></Typography>
         )}
-      </CardContent>
-    </Card>
+      </Grid>
+    </Grid>
   );
 }
 
