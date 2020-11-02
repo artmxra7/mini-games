@@ -87,8 +87,7 @@ const MatchTheCardPairComponent = (props) => {
           marginTop: "23%",
           marginBottom: "10%",
           boxShadow: "0px 0px 10px 0px grey",
-          background:
-            "-webkit-linear-gradient(290deg, #02CCBA 0%, #AA7ECD 100%)",
+          background: "linear-gradient(290deg, #02CCBA 0%, #AA7ECD 100%)",
           background: "linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%)",
           borderRadius: "1%",
           height: "fit-content",

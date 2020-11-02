@@ -5,6 +5,7 @@ import Jackpot from "./jackpot/jackpot.container";
 import FlipACoin from "./flip-a-coin/flip-a-coin.container";
 import FlippingCard from "./flipping-card/flipping-card.container";
 import RefreshGameProgress from "./refreshGameProgress/resfresh-game-progress.container";
+import LuckWheel from "./luck-wheel/luck-wheel.container";
 
 export {
   GamesNavBar,
@@ -14,4 +15,5 @@ export {
   FlipACoin,
   FlippingCard,
   RefreshGameProgress,
+  LuckWheel,
 };

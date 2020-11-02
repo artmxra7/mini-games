@@ -1,9 +1,8 @@
 import { Typography } from "@material-ui/core";
+import { LuckWheel } from "components";
 
 const SpinWheelComponent = () => {
-    return (
-        <Typography>This is spinning page</Typography>
-    )
-}
+  return <LuckWheel />;
+};
 
 export default SpinWheelComponent;

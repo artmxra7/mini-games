@@ -9,11 +9,8 @@ const FlipACoinComponent = (props) => {
     head: {
       height: "15vh",
       width: "15vh",
-      // "backface-visibility": "hidden",
-      //animation: "flip 5s linear 2s infinite alternate",
     },
     tail: {
-      //animation: "flip 5s linear 2s infinite alternate",
       height: "15vh",
       width: "15vh",
       "backface-visibility": "hidden",
@@ -26,7 +23,7 @@ const FlipACoinComponent = (props) => {
         <Grid item xs={3} />
         <Grid item>
           <Typography component="h3" style={{ fontSize: "5vh" }}>
-            Flip A Coin{" "}
+            Flip A Coin
           </Typography>
         </Grid>
       </Grid>
@@ -58,7 +55,7 @@ const FlipACoinComponent = (props) => {
         >
           <Avatar
             alt="head"
-            className={"rsr1"}
+            className={"headCoin"}
             src={winnerFace === "HEAD" ? headImage : tailImage}
             style={
               winnerFace === "HEAD" ? flipCoinStyle.head : flipCoinStyle.tail
@@ -66,7 +63,7 @@ const FlipACoinComponent = (props) => {
           ></Avatar>
           <Avatar
             alt="head"
-            className={"rsr2"}
+            className={"tailCoin"}
             src={winnerFace === "TAIL" ? headImage : tailImage}
             style={
               winnerFace === "TAIL" ? flipCoinStyle.head : flipCoinStyle.tail
