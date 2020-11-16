@@ -11,8 +11,7 @@ const FlipACoinPageComponent = () => {
         <Grid
           item
           xs={3}
-          style={{
-            // border: "5px solid red",
+          styles={{
             display: "flex",
             alignItems: "center",
             justify: "center",

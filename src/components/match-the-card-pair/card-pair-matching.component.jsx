@@ -7,20 +7,18 @@ const MatchTheCardPairComponent = (props) => {
   const {
     gameData,
     saveTheGameData,
-    goToNextStage,
     flipThisCard,
     openRefreshGameModal,
     setOpenRefreshGameModal,
     handleGameRest,
+    time,
   } = props;
-
   return (
     <Grid container>
       <Grid container direction="row" justify="space-evenly" marginTop="22%">
         <Grid
           item
           style={{
-            // paddingTop: "2%",
             position: "fixed",
             zIndex: "2",
             marginLeft: "-5%",
@@ -46,35 +44,35 @@ const MatchTheCardPairComponent = (props) => {
         }}
       >
         <Grid item>
-          <Icon color="secondary">
+          <Icon style={{ color: gameData.stars >= 1 ? "yellow" : "grey" }}>
             <StarOutlineIcon />
           </Icon>
-          <Icon color="primary">
+          <Icon style={{ color: gameData.stars >= 2 ? "yellow" : "grey" }}>
             <StarOutlineIcon />
           </Icon>
-          <Icon color="action">
+          <Icon style={{ color: gameData.stars >= 3 ? "yellow" : "grey" }}>
             <StarOutlineIcon />
           </Icon>
-          <Icon color="error">
+          <Icon style={{ color: gameData.stars >= 4 ? "yellow" : "grey" }}>
             <StarOutlineIcon />
           </Icon>
-          <Icon color="disable">
+          <Icon style={{ color: gameData.stars >= 5 ? "yellow" : "grey" }}>
             <StarOutlineIcon />
           </Icon>
         </Grid>
-        <Grid item>{gameData.moves} Moves</Grid>
-        <Grid item onClick={goToNextStage}>
+        <Grid item>
+          <Typography>{gameData.moves} Moves</Typography>
+        </Grid>
+        <Grid item>
           <Typography>
-            Time:
-            {gameData.time}
+            Time:&nbsp;
+            {time}
           </Typography>
         </Grid>
         <Grid item onClick={saveTheGameData}>
           <Typography>Stage: {gameData.stage}</Typography>
         </Grid>
         <Button
-          // variant="contained"
-          // color="primary"
           onClick={() => setOpenRefreshGameModal(true)}
           startIcon={<ReplayIcon />}
         ></Button>
@@ -113,6 +111,7 @@ const MatchTheCardPairComponent = (props) => {
                 secretValue={card.secretValue}
                 face={card.face}
                 id={card.id}
+                isMatched={card.isMatched}
               />
             </Grid>
           );

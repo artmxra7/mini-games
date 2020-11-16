@@ -1,8 +1,9 @@
 import React from "react";
-import { Card, CardContent, Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 function FlippingCardComponent(props) {
   let { secretValue, face, flipThisCard, id } = props;
+
   const styles = {
     frontFace: {
       backgroundColor: "#00D0BA",
@@ -27,7 +28,13 @@ function FlippingCardComponent(props) {
   return (
     <Grid
       onClick={() => flipThisCard(id)}
-      style={face === "FRONT" ? styles.frontFace : styles.backFace}
+      style={
+        face === "FRONT"
+          ? styles.frontFace
+          : face === "BACK"
+          ? styles.backFace
+          : styles.matchedFace
+      }
     >
       <Grid
         style={{ height: "100%" }}

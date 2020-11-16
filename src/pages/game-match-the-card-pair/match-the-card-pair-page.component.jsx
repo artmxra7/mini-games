@@ -12,7 +12,6 @@ const MatchTheCardPairComponent = () => {
           item
           xs={3}
           style={{
-            // border: "5px solid red",
             display: "flex",
             alignItems: "center",
             justify: "center",

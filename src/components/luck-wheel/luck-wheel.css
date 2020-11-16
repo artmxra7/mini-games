@@ -94,6 +94,12 @@
   }
 }
 
+@keyframes beat1 {
+  to {
+    transform: scale(0);
+  }
+}
+
 #inner-spin {
   cursor: pointer;
   user-select: none;

@@ -24,11 +24,12 @@ const RefreshGameProgressComponent = (props) => {
               marginLeft: "35%",
               // fontSize: "50px !important",
               paddingTop: "10%",
+              color: "black",
             }}
           >
             <Typography>Are you sure?</Typography>
           </Grid>
-          <Grid container style={{ marginLeft: "30%" }}>
+          <Grid container style={{ marginLeft: "30%", color: "black" }}>
             <Grid item>
               <Typography>Your progress will be Lost!</Typography>
             </Grid>

@@ -4,14 +4,27 @@ import { Grid, Paper } from "@material-ui/core";
 
 const JackpotPageComponent = () => {
   return (
-    <Grid container>
-      <GamesNavBar />
-      <Grid container justify="center" align="center">
-        <Paper>
+    <Paper style={{ minHeight: "100vh" }}>
+      <Grid container>
+        <GamesNavBar />
+        <Grid item xs={3} />
+        <Grid
+          item
+          xs={3}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justify: "center",
+            minWidth: "50%",
+            maxWidth: "50%",
+            minHeight: "100%",
+            marginLeft: "-13%",
+          }}
+        >
           <Jackpot />
-        </Paper>
+        </Grid>
       </Grid>
-    </Grid>
+    </Paper>
   );
 };
 

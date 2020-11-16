@@ -1,7 +1,8 @@
-import { Avatar, Grid, Icon, Typography } from "@material-ui/core";
+import { Avatar, Grid, Typography } from "@material-ui/core";
 import vsImage from "../../assets/game-thumbnails/vs.png";
 import headImage from "../../assets/game-thumbnails/head.png";
 import tailImage from "../../assets/game-thumbnails/tail.png";
+import "./flip-a-coin.css";
 
 const FlipACoinComponent = (props) => {
   const { isFlipping, startTheGame, winnerFace } = props;
@@ -55,7 +56,7 @@ const FlipACoinComponent = (props) => {
         >
           <Avatar
             alt="head"
-            className={"headCoin"}
+            className="headCoin"
             src={winnerFace === "HEAD" ? headImage : tailImage}
             style={
               winnerFace === "HEAD" ? flipCoinStyle.head : flipCoinStyle.tail
@@ -63,7 +64,7 @@ const FlipACoinComponent = (props) => {
           ></Avatar>
           <Avatar
             alt="head"
-            className={"tailCoin"}
+            className="tailCoin"
             src={winnerFace === "TAIL" ? headImage : tailImage}
             style={
               winnerFace === "TAIL" ? flipCoinStyle.head : flipCoinStyle.tail

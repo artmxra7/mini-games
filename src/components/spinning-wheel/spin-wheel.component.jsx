@@ -1,4 +1,3 @@
-import { Typography } from "@material-ui/core";
 import { LuckWheel } from "components";
 
 const SpinWheelComponent = () => {
