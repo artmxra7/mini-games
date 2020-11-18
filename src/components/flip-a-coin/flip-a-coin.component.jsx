@@ -5,7 +5,15 @@ import tailImage from "../../assets/game-thumbnails/tail.png";
 import "./flip-a-coin.css";
 
 const FlipACoinComponent = (props) => {
-  const { isFlipping, startTheGame, winnerFace } = props;
+  const {
+    isFlipping,
+    startTheGame,
+    winnerFace,
+    candidateWin,
+    universeWin,
+    setIsFlipping,
+  } = props;
+  let x;
   const flipCoinStyle = {
     head: {
       height: "15vh",
@@ -14,10 +22,9 @@ const FlipACoinComponent = (props) => {
     tail: {
       height: "15vh",
       width: "15vh",
-      "backface-visibility": "hidden",
+      backfaceVisibility: "hidden",
     },
   };
-
   return (
     <Grid container>
       <Grid container>
@@ -31,7 +38,7 @@ const FlipACoinComponent = (props) => {
       <Grid container>
         <Grid item xs={3}>
           <Typography style={{ fontSize: "4vh" }}>You</Typography>
-          <Typography style={{ fontSize: "3vh" }}>0</Typography>
+          <Typography style={{ fontSize: "3vh" }}>{candidateWin}</Typography>
         </Grid>
         <Grid item xs={4}>
           <Avatar
@@ -42,9 +49,10 @@ const FlipACoinComponent = (props) => {
         </Grid>
         <Grid item xs={3}>
           <Typography style={{ fontSize: "4vh" }}>Universe</Typography>
-          <Typography style={{ fontSize: "3vh" }}>0</Typography>
+          <Typography style={{ fontSize: "3vh" }}>{universeWin}</Typography>
         </Grid>
       </Grid>
+
       <Grid container direction="row" style={{ height: "70vh" }}>
         <Grid
           item
@@ -57,20 +65,33 @@ const FlipACoinComponent = (props) => {
           <Avatar
             alt="head"
             className="headCoin"
-            src={winnerFace === "HEAD" ? headImage : tailImage}
+            src={
+              isFlipping
+                ? headImage
+                : winnerFace === "HEAD"
+                ? headImage
+                : tailImage
+            }
             style={
               winnerFace === "HEAD" ? flipCoinStyle.head : flipCoinStyle.tail
             }
           ></Avatar>
           <Avatar
-            alt="head"
+            alt="tail"
             className="tailCoin"
-            src={winnerFace === "TAIL" ? headImage : tailImage}
+            src={
+              isFlipping
+                ? tailImage
+                : winnerFace === "HEAD"
+                ? headImage
+                : tailImage
+            }
             style={
-              winnerFace === "TAIL" ? flipCoinStyle.head : flipCoinStyle.tail
+              winnerFace === "HEAD" ? flipCoinStyle.tail : flipCoinStyle.head
             }
           ></Avatar>
         </Grid>
+
         <Grid
           item
           xs={4}
@@ -81,7 +102,9 @@ const FlipACoinComponent = (props) => {
             height: "100%",
           }}
         >
-          <Typography style={{ fontSize: "7vh" }}>Pick one:</Typography>
+          <Typography style={{ fontSize: "7vh", paddingLeft: "3vw" }}>
+            Pick one:
+          </Typography>
 
           <Avatar
             alt="headImage"

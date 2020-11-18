@@ -49,6 +49,9 @@ const LuckWheel = () => {
           setIsWheelSpining(false);
         }, 5000); //Then start
     }, 0);
+    setTimeout(() => {
+      setOffers(origOffers);
+    }, 10000);
   };
 
   const getRandomDegree = () => {};

@@ -14,12 +14,13 @@ const LuckWheelComponent = (props) => {
             Try your luck
           </Typography>
         </Grid>
+        {/* <Grid item sm={4}></Grid> */}
       </Grid>
 
-      <Grid container></Grid>
+      <Grid container sm={6}></Grid>
       <Grid className="wheel" style={{ alignItem: "center" }}>
-        <Grid className="wrapper ">
-          <Grid className="wheel ">
+        <Grid className="wrapper">
+          <Grid className="wheel">
             <Grid
               id="inner-wheel"
               style={{
@@ -47,6 +48,11 @@ const LuckWheelComponent = (props) => {
               id="spin"
               className="animateSpinButton"
               onClick={() => changeWheelRotation(true)}
+              style={{
+                animation: isWheelSpining
+                  ? "0"
+                  : "beat 0.5s infinite alternate",
+              }}
             >
               <Grid id="inner-spin">Spin</Grid>
             </Grid>

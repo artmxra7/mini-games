@@ -1,11 +1,11 @@
 .headCoin {
-  animation: spin1 2s ease-out infinite;
+  animation: spin1 2s ease-out 2;
   position: relative;
-  left: 15vh;
 }
 .tailCoin {
-  animation: spin2 2s ease-out infinite;
+  animation: spin2 2s ease-out 2;
   position: relative;
+  left: -15vh;
 }
 
 @keyframes spin2 {
